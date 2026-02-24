@@ -7,6 +7,7 @@ export interface Env {
   MCP_POLICIES_URL: string
   MCP_CASES_URL: string
   AI_GATEWAY_URL: string
+  CLOUDFLARE_GATEWAY_ID: string
   ANTHROPIC_API_KEY: string
   SESSION_SECRET: string
 }
