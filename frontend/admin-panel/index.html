@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Agent Observatory</title>
+  <link rel="stylesheet" href="css/observatory.css">
+</head>
+<body class="observatory">
+
+  <!-- ── Top Bar ─────────────────────────────────────────────── -->
+  <header class="obs-header">
+    <div class="obs-brand">
+      <span class="obs-logo">⚡</span>
+      <span class="obs-title">HR Agent Observatory</span>
+    </div>
+    <div class="obs-session-info">
+      <span id="session-employee">Esperando sesión...</span>
+      <div id="live-indicator" class="live-indicator live-waiting">
+        <span class="live-dot"></span>
+        <span>Esperando</span>
+      </div>
+    </div>
+    <div class="obs-controls">
+      <button id="btn-clear" class="obs-btn">Limpiar</button>
+      <button id="btn-connect" class="obs-btn obs-btn-primary">Conectar sesión</button>
+    </div>
+  </header>
+
+  <!-- ── Panel Grid ─────────────────────────────────────────── -->
+  <div class="obs-grid">
+
+    <!-- Panel 1: Transcripción -->
+    <section class="obs-panel panel-transcription">
+      <div class="panel-header">
+        <span class="panel-icon">🎤</span>
+        <span class="panel-title">Transcripción</span>
+        <span id="transcription-confidence" class="panel-badge"></span>
+      </div>
+      <div id="transcription-content" class="panel-content">
+        <div class="panel-empty">Esperando audio...</div>
+      </div>
+    </section>
+
+    <!-- Panel 2: Thinking Stream -->
+    <section class="obs-panel panel-thinking">
+      <div class="panel-header">
+        <span class="panel-icon">💭</span>
+        <span class="panel-title">Razonamiento del Agente</span>
+        <span class="panel-badge panel-badge-blue">Extended Thinking</span>
+      </div>
+      <div id="thinking-content" class="panel-content thinking-stream">
+        <div class="panel-empty">El razonamiento aparecerá aquí...</div>
+      </div>
+    </section>
+
+    <!-- Panel 3: MCP Inspector -->
+    <section class="obs-panel panel-mcp">
+      <div class="panel-header">
+        <span class="panel-icon">🔧</span>
+        <span class="panel-title">MCP Tool Calls</span>
+        <span id="tool-call-count" class="panel-badge">0 calls</span>
+      </div>
+      <div id="mcp-content" class="panel-content mcp-list">
+        <div class="panel-empty">Sin llamadas a herramientas aún</div>
+      </div>
+    </section>
+
+    <!-- Panel 4: Métricas -->
+    <section class="obs-panel panel-metrics">
+      <div class="panel-header">
+        <span class="panel-icon">📊</span>
+        <span class="panel-title">Métricas</span>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value" id="metric-tokens">—</div>
+          <div class="metric-label">Tokens</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" id="metric-latency">—</div>
+          <div class="metric-label">Latencia</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" id="metric-tools">—</div>
+          <div class="metric-label">Tool Calls</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" id="metric-cost">—</div>
+          <div class="metric-label">Costo USD</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel 5: Timeline (full width) -->
+    <section class="obs-panel panel-timeline">
+      <div class="panel-header">
+        <span class="panel-icon">⏱️</span>
+        <span class="panel-title">Timeline de Eventos</span>
+      </div>
+      <div id="timeline-content" class="timeline-container">
+        <div class="timeline-track" id="timeline-track"></div>
+      </div>
+      <!-- Detalle del evento seleccionado -->
+      <div id="event-detail" class="event-detail hidden">
+        <pre id="event-detail-json"></pre>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>

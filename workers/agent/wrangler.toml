@@ -1,0 +1,38 @@
+name = "hr-agent-worker"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[ai]
+binding = "AI"
+
+[[durable_objects.bindings]]
+name = "AGENT_SESSION"
+class_name = "HRAgentSession"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["HRAgentSession"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hr-agent-db"
+database_id = "REEMPLAZAR_CON_TU_DATABASE_ID"
+
+[[kv_namespaces]]
+binding = "HR_SESSIONS"
+id = "REEMPLAZAR_CON_TU_KV_ID"
+
+[[r2_buckets]]
+binding = "AUDIO_BUCKET"
+bucket_name = "hr-audio-recordings"
+
+[vars]
+MCP_POLICIES_URL = "https://mcp-policies.USUARIO.workers.dev"
+MCP_CASES_URL = "https://mcp-cases.USUARIO.workers.dev"
+AI_GATEWAY_URL = "https://gateway.ai.cloudflare.com/v1/ACCOUNT_ID/hr-demo"
+CLOUDFLARE_GATEWAY_ID = "hr-demo"
+
+# Secretos — añadir con:
+# wrangler secret put ANTHROPIC_API_KEY
+# wrangler secret put SESSION_SECRET
