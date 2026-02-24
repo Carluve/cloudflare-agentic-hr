@@ -8,7 +8,9 @@ export interface Env {
   MCP_CASES_URL: string
   AI_GATEWAY_URL: string
   CLOUDFLARE_GATEWAY_ID: string
+  LLM_MODEL: string
   ANTHROPIC_API_KEY: string
+  CF_GATEWAY_TOKEN: string   // opcional: habilita unified billing via AI Gateway
   SESSION_SECRET: string
 }
 

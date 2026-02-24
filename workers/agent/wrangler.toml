@@ -28,11 +28,25 @@ binding = "AUDIO_BUCKET"
 bucket_name = "hr-audio-recordings"
 
 [vars]
-MCP_POLICIES_URL = "https://mcp-policies.USUARIO.workers.dev"
-MCP_CASES_URL = "https://mcp-cases.USUARIO.workers.dev"
-AI_GATEWAY_URL = "https://gateway.ai.cloudflare.com/v1/ACCOUNT_ID/hr-demo"
+MCP_POLICIES_URL      = "https://mcp-policies.USUARIO.workers.dev"
+MCP_CASES_URL         = "https://mcp-cases.USUARIO.workers.dev"
+AI_GATEWAY_URL        = "https://gateway.ai.cloudflare.com/v1/ACCOUNT_ID/hr-demo"
 CLOUDFLARE_GATEWAY_ID = "hr-demo"
 
+# Modelo LLM — cambiar aquí para usar otro provider/modelo sin tocar el código.
+# Requiere Extended Thinking → solo modelos Claude 3.7+ son compatibles.
+# Ejemplos:
+#   claude-3-7-sonnet-latest   (Anthropic, recomendado)
+#   claude-3-5-sonnet-20241022 (Anthropic, más rápido, sin thinking)
+LLM_MODEL = "claude-3-7-sonnet-latest"
+
 # Secretos — añadir con:
-# wrangler secret put ANTHROPIC_API_KEY
+# wrangler secret put ANTHROPIC_API_KEY   ← clave directa a Anthropic
 # wrangler secret put SESSION_SECRET
+#
+# Unified billing (opcional):
+#   1. Ve a AI Gateway → tu gateway → "Manage providers" → añade la API key de Anthropic
+#   2. Crea un token de Cloudflare con permiso "AI Gateway: Edit"
+#   3. wrangler secret put CF_GATEWAY_TOKEN  ← token de Cloudflare
+#   Con CF_GATEWAY_TOKEN, el gateway usa sus API keys gestionadas y factura todo
+#   a través de Cloudflare (no necesitas cuenta directa en Anthropic).

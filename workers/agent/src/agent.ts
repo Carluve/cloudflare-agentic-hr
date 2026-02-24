@@ -153,9 +153,17 @@ export class HRAgentSession extends Agent<Env> {
   // ── Ciclo del agente (ReAct) ───────────────────────────────────
 
   private async runAgentLoop(sessionId: string) {
+    // Unified billing: si hay CF_GATEWAY_TOKEN el gateway usa las API keys
+    // gestionadas en el dashboard y factura todo por Cloudflare.
+    // Sin el token, el gateway actúa como proxy y se usa ANTHROPIC_API_KEY directamente.
+    const gatewayHeaders = this.env.CF_GATEWAY_TOKEN
+      ? { 'cf-aig-authorization': `Bearer ${this.env.CF_GATEWAY_TOKEN}` }
+      : {}
+
     const client = new Anthropic({
       baseURL: `${this.env.AI_GATEWAY_URL}/anthropic`,
       apiKey: this.env.ANTHROPIC_API_KEY,
+      defaultHeaders: gatewayHeaders,
     })
 
     const tools = this.getToolDefinitions()
@@ -166,7 +174,7 @@ export class HRAgentSession extends Agent<Env> {
       continueLoop = false  // Solo continúa si hay tool_use
 
       const stream = await client.messages.stream({
-        model: 'claude-3-7-sonnet-latest',
+        model: this.env.LLM_MODEL,
         max_tokens: 16000,
         thinking: { type: 'enabled', budget_tokens: 8000 },
         system: buildSystemPrompt(this.employee),

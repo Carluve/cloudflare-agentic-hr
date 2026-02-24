@@ -5,10 +5,19 @@ export async function transcribeAudio(
   env: Env
 ): Promise<{ text: string; confidence: number }> {
 
+  const gatewayOptions: Record<string, any> = {
+    id: env.CLOUDFLARE_GATEWAY_ID,
+    skipCache: false,
+    cacheTtl: 3600,
+  }
+  if (env.CF_GATEWAY_TOKEN) {
+    gatewayOptions.authorization = `Bearer ${env.CF_GATEWAY_TOKEN}`
+  }
+
   const result = await env.AI.run(
     '@cf/openai/whisper',
     { audio: [...new Uint8Array(audioBlob)] },
-    { gateway: { id: env.CLOUDFLARE_GATEWAY_ID, skipCache: false, cacheTtl: 3600 } }
+    { gateway: gatewayOptions }
   )
 
   return {
