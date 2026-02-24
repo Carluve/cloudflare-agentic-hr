@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>HR Agent — Logo Preview</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #F0F2F5; padding: 40px; }
+    h1 { color: #1A1A2E; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 32px; opacity: 0.5; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; }
+    .card { border-radius: 16px; padding: 40px; display: flex; flex-direction: column; gap: 20px; }
+    .card-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
+    .card-light { background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .card-light .card-label { color: #9CA3AF; }
+    .card-dark { background: #0F172A; }
+    .card-dark .card-label { color: #475569; }
+    .card-sizes { background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.08); grid-column: 1 / -1; }
+    .card-sizes .card-label { color: #9CA3AF; }
+    .sizes-row { display: flex; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
+    .size-item { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .size-label { font-size: 11px; color: #9CA3AF; }
+    .divider { width: 1px; height: 80px; background: #F0F2F5; }
+  </style>
+</head>
+<body>
+  <h1>HR Agent — Logo System</h1>
+  <div class="grid">
+
+    <!-- Light version -->
+    <div class="card card-light">
+      <span class="card-label">Versión Clara — Portal del Empleado</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+        <defs>
+          <linearGradient id="ig1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1B6CA8"/>
+            <stop offset="100%" style="stop-color:#0D4F82"/>
+          </linearGradient>
+          <linearGradient id="bg1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#F6821F"/>
+            <stop offset="100%" style="stop-color:#E06010"/>
+          </linearGradient>
+        </defs>
+        <rect x="4" y="8" width="64" height="64" rx="16" fill="url(#ig1)"/>
+        <rect x="4" y="8" width="64" height="32" rx="16" fill="white" opacity="0.06"/>
+        <circle cx="36" cy="27" r="9" fill="white" opacity="0.93"/>
+        <path d="M18 58 Q18 44 36 44 Q54 44 54 58" fill="white" opacity="0.93"/>
+        <circle cx="57" cy="57" r="11" fill="url(#bg1)"/>
+        <path d="M59 48 L54 57 L58 57 L55 66 L62 55 L58 55 Z" fill="white" opacity="0.95"/>
+        <text x="82" y="43" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#1A1A2E" letter-spacing="-0.5">HR</text>
+        <circle cx="122" cy="38" r="3" fill="#F6821F"/>
+        <text x="130" y="43" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="28" font-weight="300" fill="#1B6CA8" letter-spacing="-0.5">Agent</text>
+        <text x="82" y="58" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" font-weight="400" fill="#6B7280" letter-spacing="2">POWERED BY CLOUDFLARE</text>
+      </svg>
+    </div>
+
+    <!-- Dark version -->
+    <div class="card card-dark">
+      <span class="card-label">Versión Oscura — Panel de Observabilidad</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+        <defs>
+          <linearGradient id="ig2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#2563EB"/>
+            <stop offset="100%" style="stop-color:#1B6CA8"/>
+          </linearGradient>
+          <linearGradient id="bg2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#FB923C"/>
+            <stop offset="100%" style="stop-color:#F6821F"/>
+          </linearGradient>
+          <filter id="gd2">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.1 0 0 0 0 0.4 0 0 0 0 0.9 0 0 0 0.5 0" result="cb"/>
+            <feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="og2">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.96 0 0 0 0 0.51 0 0 0 0 0.12 0 0 0 0.7 0" result="cb"/>
+            <feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <rect x="4" y="8" width="64" height="64" rx="16" fill="url(#ig2)" filter="url(#gd2)"/>
+        <rect x="4" y="8" width="64" height="32" rx="16" fill="white" opacity="0.07"/>
+        <circle cx="36" cy="27" r="9" fill="white" opacity="0.95"/>
+        <path d="M18 58 Q18 44 36 44 Q54 44 54 58" fill="white" opacity="0.95"/>
+        <circle cx="57" cy="57" r="11" fill="url(#bg2)" filter="url(#og2)"/>
+        <path d="M59 48 L54 57 L58 57 L55 66 L62 55 L58 55 Z" fill="white"/>
+        <text x="82" y="43" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#F1F5F9" letter-spacing="-0.5">HR</text>
+        <circle cx="122" cy="38" r="3" fill="#F6821F"/>
+        <text x="130" y="43" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="28" font-weight="300" fill="#60A5FA" letter-spacing="-0.5">Agent</text>
+        <text x="82" y="58" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" font-weight="400" fill="#475569" letter-spacing="2">POWERED BY CLOUDFLARE</text>
+      </svg>
+    </div>
+
+    <!-- Sizes -->
+    <div class="card card-sizes">
+      <span class="card-label">Tamaños & Variantes</span>
+      <div class="sizes-row">
+        <!-- Full logo XL -->
+        <div class="size-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="240" height="60">
+            <defs>
+              <linearGradient id="ig3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1B6CA8"/><stop offset="100%" style="stop-color:#0D4F82"/></linearGradient>
+              <linearGradient id="bg3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#F6821F"/><stop offset="100%" style="stop-color:#E06010"/></linearGradient>
+            </defs>
+            <rect x="4" y="8" width="64" height="64" rx="16" fill="url(#ig3)"/>
+            <circle cx="36" cy="27" r="9" fill="white" opacity="0.93"/>
+            <path d="M18 58 Q18 44 36 44 Q54 44 54 58" fill="white" opacity="0.93"/>
+            <circle cx="57" cy="57" r="11" fill="url(#bg3)"/>
+            <path d="M59 48 L54 57 L58 57 L55 66 L62 55 L58 55 Z" fill="white"/>
+            <text x="82" y="43" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#1A1A2E" letter-spacing="-0.5">HR</text>
+            <circle cx="122" cy="38" r="3" fill="#F6821F"/>
+            <text x="130" y="43" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="28" font-weight="300" fill="#1B6CA8" letter-spacing="-0.5">Agent</text>
+            <text x="82" y="58" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="11" fill="#6B7280" letter-spacing="2">POWERED BY CLOUDFLARE</text>
+          </svg>
+          <span class="size-label">240×60</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Icon only large -->
+        <div class="size-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="64" height="64">
+            <defs>
+              <linearGradient id="ig4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1B6CA8"/><stop offset="100%" style="stop-color:#0D4F82"/></linearGradient>
+              <linearGradient id="bg4" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#F6821F"/><stop offset="100%" style="stop-color:#D4680E"/></linearGradient>
+            </defs>
+            <rect x="2" y="2" width="76" height="76" rx="20" fill="url(#ig4)"/>
+            <rect x="2" y="2" width="76" height="38" rx="20" fill="white" opacity="0.07"/>
+            <circle cx="40" cy="28" r="11" fill="white" opacity="0.93"/>
+            <path d="M16 65 Q16 48 40 48 Q64 48 64 65" fill="white" opacity="0.93"/>
+            <circle cx="60" cy="60" r="14" fill="url(#bg4)"/>
+            <path d="M63 48 L56 60 L61 60 L57 72 L67 58 L62 58 Z" fill="white"/>
+          </svg>
+          <span class="size-label">64×64 ícono</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Icon only small -->
+        <div class="size-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="40" height="40">
+            <defs>
+              <linearGradient id="ig5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1B6CA8"/><stop offset="100%" style="stop-color:#0D4F82"/></linearGradient>
+              <linearGradient id="bg5" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#F6821F"/><stop offset="100%" style="stop-color:#D4680E"/></linearGradient>
+            </defs>
+            <rect x="2" y="2" width="76" height="76" rx="20" fill="url(#ig5)"/>
+            <circle cx="40" cy="28" r="11" fill="white" opacity="0.93"/>
+            <path d="M16 65 Q16 48 40 48 Q64 48 64 65" fill="white" opacity="0.93"/>
+            <circle cx="60" cy="60" r="14" fill="url(#bg5)"/>
+            <path d="M63 48 L56 60 L61 60 L57 72 L67 58 L62 58 Z" fill="white"/>
+          </svg>
+          <span class="size-label">40×40 favicon</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Icon only tiny -->
+        <div class="size-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="24" height="24">
+            <defs>
+              <linearGradient id="ig6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1B6CA8"/><stop offset="100%" style="stop-color:#0D4F82"/></linearGradient>
+              <linearGradient id="bg6" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#F6821F"/><stop offset="100%" style="stop-color:#D4680E"/></linearGradient>
+            </defs>
+            <rect x="2" y="2" width="76" height="76" rx="20" fill="url(#ig6)"/>
+            <circle cx="40" cy="28" r="11" fill="white" opacity="0.93"/>
+            <path d="M16 65 Q16 48 40 48 Q64 48 64 65" fill="white" opacity="0.93"/>
+            <circle cx="60" cy="60" r="14" fill="url(#bg6)"/>
+            <path d="M63 48 L56 60 L61 60 L57 72 L67 58 L62 58 Z" fill="white"/>
+          </svg>
+          <span class="size-label">24×24 UI</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

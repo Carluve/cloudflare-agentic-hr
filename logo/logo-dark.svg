@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <linearGradient id="iconGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B6CA8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="boltGradDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FB923C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F6821F;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glowDark" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0.1
+                0 0 0 0 0.4
+                0 0 0 0 0.9
+                0 0 0 0.6 0" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="orangeGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0.96
+                0 0 0 0 0.51
+                0 0 0 0 0.12
+                0 0 0 0.8 0" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark background for the whole SVG (for preview) -->
+  <rect width="320" height="80" fill="#0F172A" rx="8"/>
+
+  <!-- ── Icon container ── -->
+  <rect x="4" y="8" width="64" height="64" rx="16" ry="16" fill="url(#iconGradDark)" filter="url(#glowDark)"/>
+  <rect x="4" y="8" width="64" height="32" rx="16" ry="16" fill="white" opacity="0.07"/>
+
+  <!-- Person silhouette -->
+  <circle cx="36" cy="27" r="9" fill="white" opacity="0.95"/>
+  <path d="M18 58 Q18 44 36 44 Q54 44 54 58" fill="white" opacity="0.95"/>
+
+  <!-- Orange bolt badge -->
+  <circle cx="57" cy="57" r="11" fill="url(#boltGradDark)" filter="url(#orangeGlow)"/>
+  <path d="M59 48 L54 57 L58 57 L55 66 L62 55 L58 55 Z" fill="white" opacity="0.95"/>
+
+  <!-- ── Wordmark (dark version) ── -->
+  <text x="82" y="43"
+        font-family="'Segoe UI', 'Inter', Arial, sans-serif"
+        font-size="28"
+        font-weight="700"
+        fill="#F1F5F9"
+        letter-spacing="-0.5">HR</text>
+
+  <circle cx="122" cy="38" r="3" fill="#F6821F"/>
+
+  <text x="130" y="43"
+        font-family="'Segoe UI', 'Inter', Arial, sans-serif"
+        font-size="28"
+        font-weight="300"
+        fill="#60A5FA"
+        letter-spacing="-0.5">Agent</text>
+
+  <!-- Tagline -->
+  <text x="82" y="58"
+        font-family="'Segoe UI', 'Inter', Arial, sans-serif"
+        font-size="11"
+        font-weight="400"
+        fill="#475569"
+        letter-spacing="2">POWERED BY CLOUDFLARE</text>
+</svg>
