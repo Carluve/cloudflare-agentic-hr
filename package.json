@@ -1,0 +1,19 @@
+{
+  "name": "hr-agent-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo de agente de RRHH construido sobre Cloudflare Workers + Agents SDK",
+  "scripts": {
+    "dev:agent":    "cd workers/agent && wrangler dev",
+    "dev:policies": "cd workers/mcp-policies && wrangler dev --port 8788",
+    "dev:cases":    "cd workers/mcp-cases && wrangler dev --port 8789",
+    "dev:portal":   "npx serve frontend/employee-portal -p 3000",
+    "dev:admin":    "npx serve frontend/admin-panel -p 3001",
+    "deploy:policies": "cd workers/mcp-policies && wrangler deploy",
+    "deploy:cases":    "cd workers/mcp-cases && wrangler deploy",
+    "deploy:agent":    "cd workers/agent && wrangler deploy",
+    "deploy:portal":   "wrangler pages deploy frontend/employee-portal --project-name=hr-employee-portal",
+    "deploy:admin":    "wrangler pages deploy frontend/admin-panel --project-name=hr-admin-panel",
+    "db:migrate": "wrangler d1 execute hr-agent-db --file=schema.sql"
+  }
+}

@@ -1,0 +1,8 @@
+name = "mcp-cases"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hr-agent-db"
+database_id = "REEMPLAZAR_CON_TU_DATABASE_ID"

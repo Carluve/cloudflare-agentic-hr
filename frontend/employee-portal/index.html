@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Assistant — Empresa Demo</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">HR Assistant</span>
+      </div>
+      <div id="agent-status" class="status-badge status-idle">
+        <span class="status-dot"></span>
+        <span class="status-text">Disponible</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <span class="employee-name" id="employee-name">Cargando...</span>
+      <button class="btn-outline" id="btn-my-requests">Mis solicitudes</button>
+    </div>
+  </header>
+
+  <!-- ── Main Layout ────────────────────────────────────────── -->
+  <main class="main-layout">
+
+    <!-- Chat Area -->
+    <section class="chat-container">
+      <div id="messages" class="messages-list">
+        <!-- Mensaje de bienvenida inicial -->
+        <div class="message message-bot" id="welcome-message">
+          <div class="message-avatar">🤖</div>
+          <div class="message-content">
+            <p>¡Hola! Soy tu asistente de Recursos Humanos. Puedo ayudarte con:</p>
+            <div class="quick-actions">
+              <button class="quick-btn" data-text="¿Cuántos días de vacaciones me quedan?">
+                🏖️ Mis vacaciones
+              </button>
+              <button class="quick-btn" data-text="Quiero solicitar un permiso">
+                📋 Solicitar permiso
+              </button>
+              <button class="quick-btn" data-text="¿Cuál es la política de teletrabajo?">
+                🏠 Política teletrabajo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Bar -->
+      <div class="input-bar">
+        <button id="btn-voice" class="btn-voice" title="Mantén pulsado para hablar">
+          <span class="mic-icon">🎤</span>
+          <canvas id="voice-visualizer" class="voice-visualizer" width="60" height="32"></canvas>
+        </button>
+        <textarea
+          id="message-input"
+          class="message-input"
+          placeholder="Escribe tu consulta o pulsa el micrófono..."
+          rows="1"
+        ></textarea>
+        <button id="btn-send" class="btn-send" disabled>
+          <span>▶</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Modal: Mis Solicitudes ─────────────────────────────── -->
+  <div id="modal-requests" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Mis Solicitudes</h2>
+        <button class="modal-close" id="btn-close-modal">✕</button>
+      </div>
+      <div id="requests-list" class="requests-list">
+        <!-- Se carga dinámicamente -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
